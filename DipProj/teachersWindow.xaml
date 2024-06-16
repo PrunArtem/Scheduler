@@ -1,0 +1,248 @@
+<Window x:Class="SchedulerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="800"
+        Height="450"
+        BorderBrush="#D2691E"
+        BorderThickness="2"
+        Title="Scheduler Application">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <!-- Основна частина з кнопками -->
+    <StackPanel Margin="10" Grid.Column="1">
+      <Button x:Name="btnSave"
+              Content="Збереження"
+              Width="120"
+              Margin="0,5"
+              Background="#8B4513"
+              BorderBrush="#D2691E"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Padding="10" />
+      <Button x:Name="btnTeachers"
+              Content="Вчителі"
+              Width="120"
+              Margin="0,5"
+              Background="#8B11"
+              BorderBrush="#D2691E"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="Black"
+              Padding="10" />
+      <Button Content="Дисципліни"
+              Width="120"
+              Margin="0,5"
+              Background="#8B4513"
+              BorderBrush="#D2691E"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Padding="10" />
+      <Button Content="Навантаження вчителів"
+              Width="120"
+              Margin="0,5"
+              Background="#8B4513"
+              BorderBrush="#D2691E"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Padding="10" />
+      <Button Content="Приміщення"
+              Width="120"
+              Margin="0,5"
+              Background="#8B4513"
+              BorderBrush="#D2691E"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Padding="10" />
+      <Button Content="Розклад"
+              Width="120"
+              Margin="0,5"
+              Background="#D2691E"
+              BorderBrush="#8B4513"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Padding="10" />
+    </StackPanel>
+    <!-- Вміст головної частини вікна -->
+    <Border Background="#F5F5F5" Padding="20" Grid.Column="0">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- Таблиця -->
+        <Border Background="#DCDCDC"
+                Padding="5"
+                Grid.ColumnSpan="3"
+                Grid.Row="0">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="100" />
+              <ColumnDefinition Width="1.37942122186495*" />
+              <ColumnDefinition Width="0.619354838709677*" />
+            </Grid.ColumnDefinitions>
+            <!-- Заголовки таблиці -->
+            <Border Background="Gray"
+                    Padding="5"
+                    Grid.Column="0"
+                    Grid.Row="0">
+              <TextBlock HorizontalAlignment="Center" Text="ID" />
+            </Border>
+            <Border Background="Gray"
+                    Padding="5"
+                    Grid.Column="1"
+                    Grid.Row="0">
+              <TextBlock HorizontalAlignment="Center" Text="Повне ім'я" />
+            </Border>
+            <Border Background="Gray"
+                    Padding="5"
+                    Grid.Column="2"
+                    Grid.Row="0">
+              <TextBlock HorizontalAlignment="Center"
+                         Text="Робоче навантаження" />
+            </Border>
+            <!-- Дані таблиці -->
+            <Border Background="White"
+                    Padding="5"
+                    Grid.Column="0"
+                    Grid.Row="1">
+              <TextBlock HorizontalAlignment="Center" Text="1" />
+            </Border>
+            <Border Background="White"
+                    Padding="5"
+                    Grid.Column="1"
+                    Grid.Row="1">
+              <TextBlock HorizontalAlignment="Center"
+                         Text="Іваненко Іван Іванович" />
+            </Border>
+            <Border Background="White"
+                    Padding="5"
+                    Grid.Column="2"
+                    Grid.Row="1">
+              <TextBlock HorizontalAlignment="Center" Text="22" />
+            </Border>
+          </Grid>
+        </Border>
+        <!-- Форма з полями під кожним з стовпців таблиці -->
+        <StackPanel Margin="0,3.40000000000001,0,19.8"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Orientation="Horizontal"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1">
+          <StackPanel.Resources>
+            <Style TargetType="TextBlock">
+              <Setter Property="FontSize" Value="14" />
+              <Setter Property="Margin" Value="0,5" />
+            </Style>
+            <Style TargetType="TextBox">
+              <Setter Property="FontSize" Value="14" />
+              <Setter Property="Margin" Value="0,5" />
+              <Setter Property="Width" Value="200" />
+            </Style>
+          </StackPanel.Resources>
+          <StackPanel Orientation="Vertical">
+            <TextBox Width="86"
+                     Height="22"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     RenderTransformOrigin="0.5182,0.5" />
+          </StackPanel>
+          <StackPanel Margin="20,0" Orientation="Vertical">
+            <TextBox Width="301" Height="22" />
+          </StackPanel>
+          <StackPanel Margin="20,0" Orientation="Vertical">
+            <TextBox Width="132" Height="22" />
+          </StackPanel>
+        </StackPanel>
+      </Grid>
+    </Border>
+    <!-- Кнопки Додати, Змінити, Видалити -->
+    <StackPanel Height="62"
+                Margin="21,0,20,21.2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Bottom"
+                Background="#DCDCDC"
+                Orientation="Horizontal"
+                Padding="10"
+                Grid.Column="0"
+                Grid.Row="0">
+      <Button Content="Додати"
+              Width="100"
+              Margin="10"
+              Background="#A9A9A9"
+              BorderBrush="#D3D3D3"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Padding="10" />
+      <Button Content="Змінити"
+              Width="100"
+              Margin="10"
+              Background="#A9A9A9"
+              BorderBrush="#D3D3D3"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Padding="10" />
+      <Button Content="Видалити"
+              Width="100"
+              Margin="10"
+              Background="#A9A9A9"
+              BorderBrush="#D3D3D3"
+              BorderThickness="2"
+              CornerRadius="10"
+              FontFamily="Segoe UI"
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="White"
+              Padding="10" />
+    </StackPanel>
+  </Grid>
+</Window>
